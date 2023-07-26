@@ -4,10 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
-
 body {
   font-family: var(--font-roboto);
   background-color: #312444;
@@ -71,14 +67,11 @@ body {
 .spinnerContainer {
   width: 500px;
   height: 500px;
-  /* margin-top: 80px; */
   background-color: #ccc;
   border-radius: 50%;
   border: 15px solid #dde;
   position: relative;
   overflow: hidden;
-  /* transform: rotate(500deg);
-  transition: 5s; */
 }
 
 .rotate {
@@ -123,7 +116,7 @@ body {
 
 #spin {
   position: absolute;
-  top: 70%;
+  top: 71%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -159,7 +152,6 @@ body {
   @apply mt-3 text-2xl font-extrabold leading-[1.15] text-slate-300 sm:text-3xl;
 }
 
-
 .desc {
   @apply mt-5 ml-5 mr-5 text-2xl text-slate-300 justify-center; 
 }
@@ -174,10 +166,6 @@ body {
 
 .logo_text {
   @apply max-sm:hidden font-satoshi font-semibold text-lg text-slate-300 tracking-wide;
-}
-
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
 .orange_btn {

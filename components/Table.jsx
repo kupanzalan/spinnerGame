@@ -6,13 +6,8 @@ import { useTable } from 'react-table';
 
 const Table = ({ data }) => {
 
-  // const fakeData = [{id: 1, name: "Zalan", money: 5000}, {id: 2, name: "Ljvknsbd", money: 9000}, {id: 3, name: "Pkdjbvl", money: 7000}, {id: 3, name: "UUUUU", money: 8000}];
-  // console.log(data);
-  console.log("before sorting: ", data);
   data.sort((user1, user2) => user2.money - user1.money);
-  console.log("after sorting: ", data);
   const tableData = React.useMemo(() => data, []);
-  // console.log(tableData);
   const cols = React.useMemo(() => [
     {
       Header: "ID", 
@@ -27,13 +22,8 @@ const Table = ({ data }) => {
       accessor: "money"
     }
   ], []);
-  // console.log(cols);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns: cols, data: tableData });
-
-  // if (!tableData || tableData.length === 0) {
-  //   return <p>Loading...</p>;
-  // }
 
   return (
     <section className="mt-10 flex justify-center">

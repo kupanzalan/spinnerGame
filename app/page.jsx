@@ -1,14 +1,24 @@
+"use client";
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import texts from './data/texts.json';
+
 const Home = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/create-user');
+  }, []);
+
   return (
     <section className="max-w-2xl flex-center flex-col">
-      <h1 className="head_text text-center">Some project
+      <h1 className="head_text text-center">
       <br className="max-md:hidden" />
       <span className="orange_gradient text-center">
-        The coolest app ever
+        {texts.gameLoading}
       </span>
       </h1>
-      <p className="desc text-center">This is some random text just for taking up some space but I don't know what to write here.
-         Next js is cool and all but I am new to this so the beginning is  bit hard.</p>
     </section>
   )
 }

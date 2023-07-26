@@ -13,7 +13,6 @@ export const GET = async (req, res) => {
 export const POST = async (req, res) => {
   console.log('POST');
   const { name } = await req.json();
-  console.log(`Name is: ${name}`);
 
   const savedUser = await prisma.user.create({
     data: {
@@ -22,15 +21,12 @@ export const POST = async (req, res) => {
     },
   });
   console.log(savedUser);
-  // return new Response("Everything OK");
   return NextResponse.json(savedUser);
 }
 
 export const PUT = async (req, res) => {
   console.log('PUT');
   const { name, money } = await req.json();
-  console.log(`Name is: ${name}`);
-  console.log(`Money is: ${money}`);
 
   const userToUpdate = await prisma.user.findMany({
     where: { name: name },
@@ -41,7 +37,6 @@ export const PUT = async (req, res) => {
     return res.status(404).json({ error: 'User not found' });
   }
 
-  console.log(userToUpdate[0].id);
   const updatedUser = await prisma.user.update({
     where: {
       id: userToUpdate[0].id,
@@ -52,5 +47,5 @@ export const PUT = async (req, res) => {
   });
   console.log(updatedUser);
 
-  return new Response("Everything OK");
+  return new Response("User updated");
 }

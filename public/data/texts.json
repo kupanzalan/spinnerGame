@@ -1,0 +1,14 @@
+{
+  "hi": "Hi ",
+  "yourMoney": "Your money: ", 
+  "gameRules": "Simple rules: Double your money, keep it, or go bankrupt", 
+  "spin": "Spin!", 
+  "double": "Double", 
+  "keep": "Keep", 
+  "bankrupt": "Bankrupt", 
+  "gameDescription": "You can create a user and play with it, if it already exists you will play with the one that has already been created", 
+  "chooseUsername": "Choose your username: ", 
+  "play": "Play!", 
+  "newGame": "New game", 
+  "leaderBoard": "Leaderboard"
+}
