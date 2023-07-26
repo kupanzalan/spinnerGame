@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
+*/
+
+body {
+  font-family: var(--font-roboto);
+  background-color: #312444;
+}
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px;
+  pointer-events: none;
+}
+
+.spinnerCenter {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 200px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+.center {
+  position: relative;
+  min-height: 80px;
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #e2e2e2;
+  font-size: 80px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.spinnerContainer {
+  width: 500px;
+  height: 500px;
+  /* margin-top: 80px; */
+  background-color: #ccc;
+  border-radius: 50%;
+  border: 15px solid #dde;
+  position: relative;
+  overflow: hidden;
+  /* transform: rotate(500deg);
+  transition: 5s; */
+}
+
+.rotate {
+  transform: rotate(500deg);
+  transition: 5s;
+}
+
+.spinnerContainer div {
+  height: 50%;
+  width: 800px;
+  position: absolute;
+  clip-path: polygon(100% 0, 50% 100%, 0 0);
+  transform: translateX(-50%);
+  transform-origin: bottom;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: var(--font-roboto);
+  color: #fff;
+  left: 135px;
+}
+
+.spinnerContainer .one {
+  background-color: rgb(36, 151, 25);
+  left: 50%;
+}
+
+.spinnerContainer .two {
+  background-color: rgb(38, 85, 187);
+  left: -35%;
+  transform: rotate(120deg);
+}
+
+.spinnerContainer .three {
+  background-color: rgb(204, 60, 60);
+  left: -35%;
+  transform: rotate(240deg);
+}
+
+#spin {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: #e2e2e2;
+  text-transform: uppercase;
+  border: 8px solid #fff;
+  font-weight: bold;
+  font-size: 20px;
+  color: #a2a2a2;
+  width: 80px;
+  height: 80px;
+  font-family: var(--font-roboto);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+#spin:hover {
+  background-color: #666666;
+  color: rgb(211, 211, 211);
+}
+
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.head_text {
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-slate-300 sm:text-6xl;
+}
+
+.money_text {
+  @apply mt-3 text-2xl font-extrabold leading-[1.15] text-slate-300 sm:text-3xl;
+}
+
+
+.desc {
+  @apply mt-5 ml-5 mr-5 text-2xl text-slate-300 justify-center; 
+}
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.blue_gradient {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+.logo_text {
+  @apply max-sm:hidden font-satoshi font-semibold text-lg text-slate-300 tracking-wide;
+}
+
+.black_btn {
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+}
+
+.orange_btn {
+  @apply rounded-full border border-black bg-amber-600 py-3 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-base font-inter flex items-center justify-center;
+}
+
+.blue_btn {
+  @apply rounded-full border border-black bg-sky-600 py-3 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-base font-inter flex items-center justify-center;
+}
+
+.outline_btn {
+  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}
+
+
