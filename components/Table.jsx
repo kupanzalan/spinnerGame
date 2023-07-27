@@ -9,10 +9,10 @@ const Table = ({ data }) => {
   data.sort((user1, user2) => user2.money - user1.money);
   const tableData = React.useMemo(() => data, []);
   const cols = React.useMemo(() => [
-    {
-      Header: "ID", 
-      accessor: "id"
-    }, 
+    // {
+    //   Header: "ID", 
+    //   accessor: "id"
+    // }, 
     {
       Header: "Name", 
       accessor: "name"
@@ -34,7 +34,7 @@ const Table = ({ data }) => {
               {headerGroups.map((headerGroup) => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
                   {headerGroup.headers.map((column) => (
-                    <th className="px-6 py-3" {...column.getHeaderProps()}>
+                    <th className="px-6 py-3 text-center text-xl font-extrabold" {...column.getHeaderProps()}>
                       {column.render("Header")}
                     </th>
                   ))}
@@ -47,7 +47,7 @@ const Table = ({ data }) => {
                 return (
                   <tr className="bg-violet-300 border-b" {...row.getRowProps()}>
                     {row.cells.map((cell) => (
-                      <td className="px-6 py-5 font-medium text-gray-700 whitespace-nowrap" {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      <td className="px-6 py-5 font-bold text-gray-700 text-center text-lg whitespace-nowrap" {...cell.getCellProps()}>{cell.render("Cell")}</td>
                     ))}
                   </tr>
                 )
