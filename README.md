@@ -4,7 +4,17 @@ This is a visually engaging and interactive game interface featuring a pixelated
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+Navigate to the project folder and install the necessary dependencies:
+
+For the frontend:
+
+```
+npm install
+```
+
+## 2. Run the application
+Run the development server:
 
 ```bash
 npm run dev
