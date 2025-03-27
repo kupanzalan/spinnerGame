@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Pixel font */
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: var(--font-roboto);
-  background-color: #312444;
+  font-family: 'Pixelify Sans', sans-serif;
+  background-color: #ffe252;
+  color: #fff;
 }
 
 .main {
@@ -53,15 +58,44 @@ body {
   min-height: 80px;
 }
 
+nav {
+  position: fixed;
+  top: 70px;
+  left: 150px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+nav a {
+  display: block;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #666;
+}
+
 .arrow-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #e2e2e2;
-  font-size: 80px;
+  font-size: 40px;
   margin-top: 20px;
   padding-bottom: 10px;
+  color: #e2e2e2;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 3px 3px 0px #000, 6px 6px 0px #333;
 }
 
 .spinnerContainer {
@@ -72,6 +106,18 @@ body {
   border: 15px solid #dde;
   position: relative;
   overflow: hidden;
+  image-rendering: pixelated;
+  box-shadow: 0 0 0 5px black;
+}
+
+.spinnerContainer::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid black;
+  box-sizing: border-box;
 }
 
 .rotate {
@@ -92,53 +138,87 @@ body {
   justify-content: center;
   font-size: 40px;
   font-weight: bold;
-  font-family: var(--font-roboto);
+  font-family: var(--font-roboto); 
   color: #fff;
   left: 135px;
+  text-shadow: 4px 4px 0px #000, 8px 8px 0px #444;
+  
 }
 
 .spinnerContainer .one {
-  background-color: rgb(36, 151, 25);
+  background-color: #fe79ad;
   left: 50%;
 }
 
 .spinnerContainer .two {
-  background-color: rgb(38, 85, 187);
+  background-color: #31d9ce;
   left: -35%;
   transform: rotate(120deg);
 }
 
 .spinnerContainer .three {
-  background-color: rgb(204, 60, 60);
+  background-color: #a5d144; 
   left: -35%;
   transform: rotate(240deg);
 }
 
 #spin {
   position: absolute;
-  top: 71%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  background-color: #e2e2e2;
+  background-color: #9954e7;
   text-transform: uppercase;
-  border: 8px solid #fff;
+  border: 4px solid #fff;
   font-weight: bold;
-  font-size: 20px;
-  color: #a2a2a2;
-  width: 80px;
-  height: 80px;
-  font-family: var(--font-roboto);
+  font-size: 18px;
+  color: rgb(238, 238, 238);
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   cursor: pointer;
-  outline: none;
-  letter-spacing: 1px;
+  box-shadow: 0 5px #666, 0 10px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+  image-rendering: pixelated;
+}
+
+#spin:active {
+  transform: translate(-50%, -50%) scale(0.9);
+  box-shadow: 0 2px #666;
 }
 
 #spin:hover {
-  background-color: #666666;
-  color: rgb(211, 211, 211);
+  background-color: #b07fe7;
+  color: #222;
 }
+
+.blue_btn, .orange_btn {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 20px;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  border: 4px solid #fff;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.2s ease-in-out;
+  margin: 20px;
+}
+
+.blue_btn {
+  background-color: #47849e;
+  color: white;
+}
+
+.orange_btn {
+  background-color: #e81e7d;
+  color: white;
+}
+
+.blue_btn:hover, .orange_btn:hover {
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
 
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
@@ -148,12 +228,28 @@ body {
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-slate-300 sm:text-6xl;
 }
 
+.head_text_style {
+  color: #000;
+  font-size: 80px;
+  text-shadow: 2px 2px 0px #000, 5px 5px 0px rgb(230, 230, 230);
+}
+
 .money_text {
   @apply mt-3 text-2xl font-extrabold leading-[1.15] text-slate-300 sm:text-3xl;
 }
 
+.your_money_style {
+  color: #000;
+}
+
 .desc {
-  @apply mt-5 ml-5 mr-5 text-2xl text-slate-300 justify-center; 
+  @apply mt-5 ml-5 mr-5 text-3xl text-slate-300 justify-center; 
+}
+
+.desc {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .orange_gradient {
@@ -167,14 +263,14 @@ body {
 .logo_text {
   @apply max-sm:hidden font-satoshi font-semibold text-lg text-slate-300 tracking-wide;
 }
-
+/* 
 .orange_btn {
   @apply rounded-full border border-black bg-amber-600 py-3 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-base font-inter flex items-center justify-center;
 }
 
 .blue_btn {
   @apply rounded-full border border-black bg-sky-600 py-3 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-base font-inter flex items-center justify-center;
-}
+} */
 
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;

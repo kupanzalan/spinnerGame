@@ -13,6 +13,15 @@ const page = ({ params }) => {
 
   let moneyTransform = '';
 
+  // const dummyUser = {
+  //   name: params.user || "GuestPlayer",
+  //   money: 1000,
+  // };
+
+  // useEffect(() => {
+  //   setMoney(dummyUser.money); // Set dummy user's initial money
+  // }, []);
+
   useEffect(() => {
     if (!dataLoaded) {
       getCurrentUser();
@@ -96,6 +105,9 @@ const page = ({ params }) => {
         rotationAngle={rotationAngle}
         handleSpinClick={handleSpinClick}/>) : (<div className="spinnerCenter"><span className="loader"></span></div>)}
     </section>
+    // <section>
+    //   <Game player={dummyUser.name} money={money} rotationAngle={rotationAngle} handleSpinClick={handleSpinClick} />
+    // </section>
   )
 }
 
